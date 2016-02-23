@@ -1,4 +1,4 @@
-.grid-block, .main, .post, .comments li, .comment-form {
+.grid-block, .main, .restaurant, .post, .comments li, .comment-form {
   background: #fff;
   border-radius: 3px;
   padding: 10px;
@@ -28,6 +28,54 @@ body {
 
 #spinner {
   height: 300px; }
+
+.restaurant {
+  /* For modern browsers */
+  /* For IE 6/7 (trigger hasLayout) */
+  *zoom: 1;
+  position: relative;
+  opacity: 1; }
+  .restaurant:before, .restaurant:after {
+    content: "";
+    display: table; }
+  .restaurant:after {
+    clear: both; }
+  .restaurant.invisible {
+    opacity: 0; }
+  .restaurant.instant {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none; }
+  .restaurant.animate{
+    -webkit-transition: all 300ms 0ms;
+    -moz-transition: all 300ms 0ms ease-in;
+    -o-transition: all 300ms 0ms ease-in;
+    transition: all 300ms 0ms ease-in; }
+  .restaurant .upvote {
+    display: block;
+    margin: 7px 12px 0 0;
+    float: left; }
+  .restaurant .restaurant-content {
+    float: left; }
+    .restaurant .restaurant-content h3 {
+      margin: 0;
+      line-height: 1.4;
+      font-size: 18px; }
+      .restaurant .restaurant-content h3 a {
+        display: inline-block;
+        margin-right: 5px; }
+      .restaurant .restaurant-content h3 span {
+        font-weight: normal;
+        font-size: 14px;
+        display: inline-block;
+        color: #aaaaaa; }
+    .restaurant .restaurant-content p {
+      margin: 0; }
+  .restaurant .discuss {
+    display: block;
+    float: right;
+    margin-top: 7px; }
 
 .post {
   /* For modern browsers */
@@ -112,6 +160,11 @@ body {
     background: rgba(0, 0, 0, 0.1); }
 
 .posts .spinner-container{
+  position: relative;
+  height: 100px;
+}
+
+.restaurants .spinner-container{
   position: relative;
   height: 100px;
 }

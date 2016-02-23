@@ -1,3 +1,7 @@
+Meteor.publish('restaurants', function() {
+  return Restaurants.find();
+});
+
 Meteor.publish('posts', function() {
   return Posts.find();
 });
