@@ -3,7 +3,7 @@
     <div class="restaurant-content">
       <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
       <p>
-        <a href="{{pathFor 'restaurantEdit'}}">Edit</a>
+        {{#if ownRestaurant}}<a href="{{pathFor 'restaurantEdit'}}">Edit</a>{{/if}}
       </p>
     </div>
     <a href="{{pathFor 'restaurantPage'}}" class="discuss btn btn-default">Restaurant Page</a>

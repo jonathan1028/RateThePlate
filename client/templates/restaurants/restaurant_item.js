@@ -1,5 +1,5 @@
 Template.restaurantItem.helpers({
-  ownPost: function() {
+  ownRestaurant: function() {
     return this.userId === Meteor.userId();
   },
   domain: function() {
