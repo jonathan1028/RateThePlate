@@ -2,11 +2,17 @@
   <div class="restaurant-page page">
     {{> restaurantItem}}
 
-    <!-- <ul class="comments">
+    <ul class="comments">
+      {{#each plates}}
+        {{> plateItem}}
+      {{/each}}
+    </ul>
+    
+    <ul class="comments">
       {{#each comments}}
         {{> commentItem}}
       {{/each}}
-    </ul> -->
+    </ul>
 
     {{#if currentUser}}
       {{> commentSubmit}}

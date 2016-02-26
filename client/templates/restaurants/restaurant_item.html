@@ -1,11 +1,25 @@
 <template name="restaurantItem">
   <div class="restaurant">
     <div class="restaurant-content">
-      <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+      <h3><a href="{{pathFor 'restaurantPage'}}">{{title}}</a><span></span></h3>
       <p>
         {{#if ownRestaurant}}<a href="{{pathFor 'restaurantEdit'}}">Edit</a>{{/if}}
       </p>
+      <p>
+    	Phone
+      </p>
+      <p>
+    	Address
+      </p>
+      <p>
+    	$$$
+      </p>
+      <p>
+    	American, Vietnames, Sandwiches
+      </p>
+
     </div>
+
     <a href="{{pathFor 'restaurantPage'}}" class="discuss btn btn-default">Restaurant Page</a>
   </div>
 </template>

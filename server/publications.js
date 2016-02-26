@@ -2,6 +2,10 @@ Meteor.publish('restaurants', function() {
   return Restaurants.find();
 });
 
+Meteor.publish('plates', function() {
+  return Plates.find();
+});
+
 Meteor.publish('posts', function() {
   return Posts.find();
 });
