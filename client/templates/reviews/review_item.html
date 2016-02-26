@@ -1,12 +1,10 @@
-<template name="plateItem">
+<template name="reviewItem">
 
     <div class="restaurant">
       <div class="restaurant-content">
-      <h3><a href="{{pathFor 'platePage'}}">{{name}}</a><span></span></h3>
-      <p>{{description}}</p>
-      <p>Rating: {{rating}}</p>
+      	<p>Rating: {{rating}}</p>
+      	<p>{{review}}</p>
       </div>
-      <a href="{{pathFor 'restaurantPage'}}" class="discuss btn btn-default">Rate It!</a>
     </div>
 
 </template>

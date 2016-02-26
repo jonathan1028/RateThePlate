@@ -6,6 +6,10 @@ Meteor.publish('plates', function() {
   return Plates.find();
 });
 
+Meteor.publish('reviews', function() {
+  return Reviews.find();
+});
+
 Meteor.publish('posts', function() {
   return Posts.find();
 });

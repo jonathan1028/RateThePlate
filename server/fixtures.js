@@ -20,15 +20,7 @@ if (Restaurants.find().count() === 0) {
     submitted: new Date(now - 7 * 3600 * 1000)
   });
 
-  Comments.insert({
-    restaurantId: telescopeId,
-    userId: tom._id,
-    author: tom.profile.name,
-    submitted: new Date(now - 5 * 3600 * 1000),
-    body: 'I am a comment'
-  });
-
-  Plates.insert({
+  var plate1 = Plates.insert({
     restaurantId: telescopeId,
     userId: tom._id,
     name: 'Spaghetti',
@@ -36,6 +28,23 @@ if (Restaurants.find().count() === 0) {
     rating: 5.7,
     description: 'Noodles with savory bolognese sauce.'
   });
+
+  Reviews.insert({
+    plateId: plate1,
+    userId: tom._id,
+    submitted: new Date(now - 5 * 3600 * 1000),
+    rating: 8.7,
+    review: 'Amazing Spaghetti!'
+  });
+
+  Reviews.insert({
+    plateId: plate1,
+    userId: tom._id,
+    submitted: new Date(now - 5 * 3600 * 1000),
+    rating: 9.7,
+    review: 'Incredible spaghetti!!'
+  });
+
 
   Plates.insert({
     restaurantId: telescopeId,

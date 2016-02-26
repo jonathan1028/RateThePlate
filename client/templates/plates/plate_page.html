@@ -1,13 +1,16 @@
 <template name="platePage">
   <div class="plate-page page">
     {{> plateItem}}
-
-   Reviews
+    <ul class="comments">
+      {{#each reviews}}
+        {{> reviewItem}}
+      {{/each}}
+    </ul>
 
     {{#if currentUser}}
       {{> commentSubmit}}
     {{else}}
-      <p>Please log in to leave a comment.</p>
+      <p>Please login to rate this plate.</p>
     {{/if}}
   </div>
 </template>

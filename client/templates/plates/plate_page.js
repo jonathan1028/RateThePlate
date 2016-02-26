@@ -1,14 +1,9 @@
-Template.restaurantPage.helpers({
-  plates: function() {
-    return Plates.find({restaurantId: this._id});
+Template.platePage.helpers({
+  reviews: function() {
+    return Reviews.find({plateId: this._id});
   }
 });
 
-Template.restaurantPage.helpers({
-  comments: function() {
-    return Comments.find({restaurantId: this._id});
-  }
-});
 
 
 /*Template.restaurantPage.helpers({
