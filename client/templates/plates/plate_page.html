@@ -1,0 +1,13 @@
+<template name="platePage">
+  <div class="plate-page page">
+    {{> plateItem}}
+
+   Reviews
+
+    {{#if currentUser}}
+      {{> commentSubmit}}
+    {{else}}
+      <p>Please log in to leave a comment.</p>
+    {{/if}}
+  </div>
+</template>

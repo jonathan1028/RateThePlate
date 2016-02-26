@@ -31,15 +31,19 @@ if (Restaurants.find().count() === 0) {
   Plates.insert({
     restaurantId: telescopeId,
     userId: tom._id,
+    name: 'Spaghetti',
     submitted: new Date(now - 5 * 3600 * 1000),
-    body: 'I am a plate'
+    rating: 5.7,
+    description: 'Noodles with savory bolognese sauce.'
   });
 
   Plates.insert({
     restaurantId: telescopeId,
     userId: sacha._id,
+    name: 'Lasagna',
     submitted: new Date(now - 3 * 3600 * 1000),
-    body: 'I am a plate too'
+    rating: 6.3,
+    description: 'Pasta layers stuffed with italian sausage and 5 different Italian cheeses.'
   });
 
   Restaurants.insert({
