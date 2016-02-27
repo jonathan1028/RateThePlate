@@ -1,4 +1,4 @@
-Template.postSubmit.onCreated(function() {
+/*Template.postSubmit.onCreated(function() {
   Session.set('postSubmitErrors', {});
 });
 
@@ -36,4 +36,4 @@ Template.postSubmit.events({
       Router.go('postPage', {_id: result._id});  
     });
   }
-});
+});*/

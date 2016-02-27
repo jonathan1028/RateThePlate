@@ -22,7 +22,7 @@ if (Restaurants.find().count() === 0) {
     zipcode: '78722',
     phone: '(512) 391-2337',
     foodType: 'American, Gastropub',
-    expense: '$$',
+    cost: '$$',
     userId: sacha._id,
     author: sacha.profile.name,
     url: 'http://sachagreif.com/introducing-telescope/',
@@ -37,7 +37,7 @@ if (Restaurants.find().count() === 0) {
     zipcode: '78701',
     phone: '(512) 236-9599',
     foodType: 'American, Southern, Breakfast & Brunch',
-    expense: '$$',
+    cost: '$$',
     userId: sacha._id,
     author: sacha.profile.name,
     url: 'http://sachagreif.com/introducing-telescope/',
@@ -52,15 +52,12 @@ if (Restaurants.find().count() === 0) {
     zipcode: '78702',
     phone: '(512) 653-1187',
     foodType: 'Barbeque',
-    expense: '$$',
+    cost: '$$',
     userId: sacha._id,
     author: sacha.profile.name,
     url: 'http://sachagreif.com/introducing-telescope/',
     submitted: new Date(now - 7 * 3600 * 1000)
   });
-
-
-
 
 
   var plate1 = Plates.insert({
@@ -85,17 +82,19 @@ var plate2 = Plates.insert({
   Reviews.insert({
     plateId: plate1,
     userId: tom._id,
+    author: 'Jonathan L.',
     submitted: new Date(now - 5 * 3600 * 1000),
     rating: 8.7,
-    review: 'Amazing Spaghetti!'
+    body: 'Amazing Spaghetti!'
   });
 
   Reviews.insert({
     plateId: plate1,
     userId: tom._id,
+    author: 'Jonathan L.',
     submitted: new Date(now - 5 * 3600 * 1000),
     rating: 9.7,
-    review: 'Incredible spaghetti!!'
+    body: 'Incredible spaghetti. It changed my life!!'
   });
 
 

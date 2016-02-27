@@ -1,19 +1,63 @@
  <template name="restaurantEdit">
   <form class="main form page">
-    <div class="form-group">
-      <label class="control-label" for="url">URL</label>
-      <div class="controls">
-          <input name="url" id="url" type="text" value="{{url}}" placeholder="Y
-our URL" class="form-control"/>
-      </div>
-    </div>
-    <div class="form-group">
+
+
+ <div class="form-group">
       <label class="control-label" for="title">Title</label>
       <div class="controls">
-          <input name="title" id="title" type="text" value="{{title}}" placehol
-der="Name your post" class="form-control"/>
+          <input name="title" id="title" type="text" value={{title}} placeholder="Name your post" class="form-control"/>
       </div>
     </div>
+
+    <div class="form-group">
+      <label class="control-label" for="url">Phone</label>
+      <div class="controls">
+          <input name="phone" id="phone" type="text" value={{phone}} placeholder="Phone number" class="form-control"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="url">Address</label>
+      <div class="controls">
+          <input name="address" id="address" type="text" value={{address}} placeholder="Address" class="form-control"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="url">City</label>
+      <div class="controls">
+          <input name="city" id="city" type="text" value={{city}} placeholder="City" class="form-control"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="url">State</label>
+      <div class="controls">
+          <input name="state" id="state" type="text" value={{state}} placeholder="State" class="form-control"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="url">Zipcode</label>
+      <div class="controls">
+          <input name="zipcode" id="zipcode" type="text" value={{zipcode}} placeholder="Zipcode" class="form-control"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="url">Cost</label>
+      <div class="controls">
+          <input name="cost" id="cost" type="text" value="" placeholder={{cost}} class="form-control"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="url">Type of Food</label>
+      <div class="controls">
+          <input name="foodType" id="foodType" type="text" value={{foodType}} placeholder="Type of food" class="form-control"/>
+      </div>
+    </div>
+    
     <input type="submit" value="Submit" class="btn btn-primary submit"/>
     <hr/>
     <a class="btn btn-danger delete" href="#">Delete Restaurant</a>

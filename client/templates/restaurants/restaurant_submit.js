@@ -3,8 +3,15 @@ Template.restaurantSubmit.events({
     e.preventDefault();
 
     var restaurant = {
-      url: $(e.target).find('[name=url]').val(), 
-      title: $(e.target).find('[name=title]').val()
+      //url: $(e.target).find('[name=url]').val(), 
+      title: $(e.target).find('[name=title]').val(), 
+      phone: $(e.target).find('[name=phone]').val(),
+      address: $(e.target).find('[name=address]').val(),
+      city: $(e.target).find('[name=city]').val(),
+      state: $(e.target).find('[name=state]').val(),
+      zipcode: $(e.target).find('[name=zipcode]').val(),
+      cost: $(e.target).find('[name=cost]').val(),
+      foodType: $(e.target).find('[name=foodType]').val()
     };
 
     Meteor.call('restaurantInsert', restaurant, function(error, result) { 

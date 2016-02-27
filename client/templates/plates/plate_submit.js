@@ -1,4 +1,4 @@
-Template.restaurantSubmit.events({ 
+Template.plateSubmit.events({ 
   'submit form': function(e) {
     e.preventDefault();
 

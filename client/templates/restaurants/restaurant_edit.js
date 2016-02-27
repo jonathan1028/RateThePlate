@@ -3,9 +3,15 @@ Template.restaurantEdit.events({ 'submit form': function(e) {
 
   var currentRestaurantId = this._id;
 
-  var restaurantProperties = {
-    url: $(e.target).find('[name=url]').val(), 
-    title: $(e.target).find('[name=title]').val()
+  var restaurantProperties = { 
+      title: $(e.target).find('[name=title]').val(), 
+      phone: $(e.target).find('[name=phone]').val(),
+      address: $(e.target).find('[name=address]').val(),
+      city: $(e.target).find('[name=city]').val(),
+      state: $(e.target).find('[name=state]').val(),
+      zipcode: $(e.target).find('[name=zipcode]').val(),
+      cost: $(e.target).find('[name=cost]').val(),
+      foodType: $(e.target).find('[name=foodType]').val()
   }
 
   Restaurants.update(currentRestaurantId, {$set: restaurantProperties}, function(error) { 
