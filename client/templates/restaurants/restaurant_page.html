@@ -8,16 +8,5 @@
       {{/each}}
     </ul>
     
-    <ul class="comments">
-      {{#each comments}}
-        {{> commentItem}}
-      {{/each}}
-    </ul>
-
-    {{#if currentUser}}
-      {{> commentSubmit}}
-    {{else}}
-      <p>Please login to rate the plate.</p>
-    {{/if}}
   </div>
 </template>

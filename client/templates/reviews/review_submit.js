@@ -1,34 +1,39 @@
-Template.restaurantSubmit.events({ 
-  'submit form': function(e) {
-    e.preventDefault();
-
-    var restaurant = {
-      url: $(e.target).find('[name=url]').val(), 
-      title: $(e.target).find('[name=title]').val()
-    };
-
-    Meteor.call('restaurantInsert', restaurant, function(error, result) { 
-    // display the error to the user and abort
-    if (error)
-      return alert(error.reason);
-    
-    Router.go('restaurantPage', {_id: result._id});
-    });
-  } 
+Template.reviewSubmit.onCreated(function() {
+  Session.set('reviewSubmitErrors', {});
 });
 
+Template.reviewSubmit.helpers({
+  errorMessage: function(field) {
+    return Session.get('reviewSubmitErrors')[field];
+  },
+  errorClass: function (field) {
+    return !!Session.get('reviewSubmitErrors')[field] ? 'has-error' : '';
+  }
+});
 
-
-/*Template.restaurantSubmit.events({
-  'submit form': function(e) {
+Template.reviewSubmit.events({
+  'submit form': function(e, template) {
     e.preventDefault();
 
-    var restaurant = {
-      url: $(e.target).find('[name=url]').val(),
-      title: $(e.target).find('[name=title]').val()
+    var $body = $(e.target).find('[name=body]');
+    var review = {
+      body: $body.val(),
+      rating: $(e.target).find('[name=rating]').val(),
+      plateId: template.data._id
     };
 
-    restaurant._id = Restaurants.insert(restaurant);
-    Router.go('restaurantPage', restaurant);
+    var errors = {};
+    if (! review.body) {
+      errors.body = "Please write some content";
+      return Session.set('reviewSubmitErrors', errors);
+    }
+
+    Meteor.call('reviewInsert', review, function(error, reviewId) {
+      if (error){
+        throwError(error.reason);
+      } else {
+        $body.val('');
+      }
+    });
   }
-});*/
+});

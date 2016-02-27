@@ -12,22 +12,75 @@ if (Restaurants.find().count() === 0) {
   });
   var sacha = Meteor.users.findOne(sachaId);
 
-  var telescopeId = Restaurants.insert({
-    title: 'Introducing Telescope',
+
+
+  var rest1 = Restaurants.insert({
+    title: 'Salty Sow',
+    address: '1917 Manor Rd',
+    city: 'Austin',
+    state: 'Tx',
+    zipcode: '78722',
+    phone: '(512) 391-2337',
+    foodType: 'American, Gastropub',
+    expense: '$$',
     userId: sacha._id,
     author: sacha.profile.name,
     url: 'http://sachagreif.com/introducing-telescope/',
     submitted: new Date(now - 7 * 3600 * 1000)
   });
 
+  var rest2 = Restaurants.insert({
+    title: 'Moonshine Patio Bar & Grill',
+    address: '303 Red River St',
+    city: 'Austin',
+    state: 'Tx',
+    zipcode: '78701',
+    phone: '(512) 236-9599',
+    foodType: 'American, Southern, Breakfast & Brunch',
+    expense: '$$',
+    userId: sacha._id,
+    author: sacha.profile.name,
+    url: 'http://sachagreif.com/introducing-telescope/',
+    submitted: new Date(now - 7 * 3600 * 1000)
+  });
+
+  var rest3 = Restaurants.insert({
+    title: 'Franklin Barbecue',
+    address: '900 E 11th St',
+    city: 'Austin',
+    state: 'Tx',
+    zipcode: '78702',
+    phone: '(512) 653-1187',
+    foodType: 'Barbeque',
+    expense: '$$',
+    userId: sacha._id,
+    author: sacha.profile.name,
+    url: 'http://sachagreif.com/introducing-telescope/',
+    submitted: new Date(now - 7 * 3600 * 1000)
+  });
+
+
+
+
+
   var plate1 = Plates.insert({
-    restaurantId: telescopeId,
+    restaurantId: rest1,
     userId: tom._id,
     name: 'Spaghetti',
     submitted: new Date(now - 5 * 3600 * 1000),
     rating: 5.7,
     description: 'Noodles with savory bolognese sauce.'
   });
+
+var plate2 = Plates.insert({
+    restaurantId: rest1,
+    userId: sacha._id,
+    name: 'Lasagna',
+    submitted: new Date(now - 3 * 3600 * 1000),
+    rating: 6.3,
+    description: 'Pasta layers stuffed with italian sausage and 5 different Italian cheeses.'
+  });
+  
 
   Reviews.insert({
     plateId: plate1,
@@ -46,28 +99,6 @@ if (Restaurants.find().count() === 0) {
   });
 
 
-  Plates.insert({
-    restaurantId: telescopeId,
-    userId: sacha._id,
-    name: 'Lasagna',
-    submitted: new Date(now - 3 * 3600 * 1000),
-    rating: 6.3,
-    description: 'Pasta layers stuffed with italian sausage and 5 different Italian cheeses.'
-  });
+  
 
-  Restaurants.insert({
-    title: 'Uchi',
-    userId: tom._id,
-    url: 'http://meteor.com',
-    submitted: new Date(now - 10 * 3600 * 1000),
-    commentsCount: 0
-  });
-
-  Restaurants.insert({
-    title: 'Vespaio',
-    userId: tom._id,
-    url: 'http://themeteorbook.com',
-    submitted: new Date(now - 12 * 3600 * 1000),
-    commentsCount: 0
-  });
 }

@@ -6,16 +6,19 @@
         {{#if ownRestaurant}}<a href="{{pathFor 'restaurantEdit'}}">Edit</a>{{/if}}
       </p>
       <p>
-    	Phone
+    	{{phone}}
       </p>
       <p>
-    	Address
+    	{{address}}
       </p>
       <p>
-    	$$$
+      	{{city}}, {{state}} {{zipcode}}
       </p>
       <p>
-    	American, Vietnames, Sandwiches
+    	{{expense}}
+      </p>
+      <p>
+    	{{foodType}}
       </p>
 
     </div>

@@ -1,4 +1,4 @@
-Template.plateItem.helpers({
+Template.reviewItem.helpers({
   submittedText: function() {
     return this.submitted.toString();
   }
