@@ -4,8 +4,8 @@
       <div class="restaurant-content">
       <h3><a href="{{pathFor 'platePage'}}">{{name}}</a><span></span></h3>
       <p>{{description}}</p>
-      <p>Rating: {{rating}}</p>
-      <p>Reviews: {{reviewsCount}} </p>
+      <p><strong>Avg Rating: {{rating}}</strong>, Ratings: <a href="{{pathFor 'platePage'}}">{{reviewsCount}}</a></p>
+      <p> </p>
       </div>
       <a href="{{pathFor 'restaurantPage'}}" class="discuss btn btn-default">Rate It!</a>
     </div>
