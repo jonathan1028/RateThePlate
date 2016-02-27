@@ -8,7 +8,7 @@ Template.plateSubmit.events({
       //url: $(e.target).find('[name=url]').val(), 
       restaurantId: currentRestaurantId, 
       name: $(e.target).find('[name=name]').val(), 
-      url: $(e.target).find('[name=url]').val(),
+      description: $(e.target).find('[name=description]').val(),
       
     };
 

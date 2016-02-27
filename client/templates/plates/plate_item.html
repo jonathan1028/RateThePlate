@@ -3,11 +3,14 @@
     <div class="restaurant">
       <div class="restaurant-content">
       <h3><a href="{{pathFor 'platePage'}}">{{name}}</a><span></span></h3>
+      <p>
+        <a href="{{pathFor 'plateEdit'}}">Edit</a>
+      </p>
       <p>{{description}}</p>
       <p><strong>Avg Rating: {{rating}}</strong>, Ratings: <a href="{{pathFor 'platePage'}}">{{reviewsCount}}</a></p>
       <p> </p>
       </div>
-      <a href="{{pathFor 'restaurantPage'}}" class="discuss btn btn-default">Rate It!</a>
+      <a href="{{pathFor 'platePage'}}" class="discuss btn btn-default">Rate It!</a>
     </div>
 
 </template>
