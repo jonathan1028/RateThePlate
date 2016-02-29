@@ -18,7 +18,9 @@ Template.reviewSubmit.events({
     var $body = $(e.target).find('[name=body]');
     var review = {
       body: $body.val(),
-      rating: $(e.target).find('[name=rating]').val(),
+      //rating: $(e.target).find('[name=rating]').val(),
+      rating: $('input:radio[name="rating"]:checked').val(), 
+      //rating: $('input[name="rating"]:checked', event.target).data('answer'),
       plateId: template.data._id
     };
 
