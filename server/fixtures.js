@@ -2,11 +2,22 @@
 if (Restaurants.find().count() === 0) {
   var now = new Date().getTime();
 
-  // create two users
+  // create admin users
+  var jonathanId = Meteor.users.insert({
+    profile: { 
+      name: 'Jonathan Lee' 
+      //email: 'lee.jonathanw@gmail.com'
+      //password: 'password'
+    }, 
+    admin: true
+  });
+  var jonathan = Meteor.users.findOne(jonathanId);
+
   var tomId = Meteor.users.insert({
     profile: { name: 'Tom Coleman' }
   });
   var tom = Meteor.users.findOne(tomId);
+  
   var sachaId = Meteor.users.insert({
     profile: { name: 'Sacha Greif' }
   });
@@ -23,9 +34,7 @@ if (Restaurants.find().count() === 0) {
     phone: '(512) 391-2337',
     foodType: 'American, Gastropub',
     cost: '$$',
-    userId: sacha._id,
-    author: sacha.profile.name,
-    url: 'http://sachagreif.com/introducing-telescope/',
+    userId: jonathan._id,
     submitted: new Date(now - 7 * 3600 * 1000)
   });
 
@@ -38,9 +47,7 @@ if (Restaurants.find().count() === 0) {
     phone: '(512) 236-9599',
     foodType: 'American, Southern, Breakfast & Brunch',
     cost: '$$',
-    userId: sacha._id,
-    author: sacha.profile.name,
-    url: 'http://sachagreif.com/introducing-telescope/',
+    userId: jonathan._id,
     submitted: new Date(now - 7 * 3600 * 1000)
   });
 
@@ -53,16 +60,14 @@ if (Restaurants.find().count() === 0) {
     phone: '(512) 653-1187',
     foodType: 'Barbeque',
     cost: '$$',
-    userId: sacha._id,
-    author: sacha.profile.name,
-    url: 'http://sachagreif.com/introducing-telescope/',
+    userId: jonathan._id,
     submitted: new Date(now - 7 * 3600 * 1000)
   });
 
 
   var plate1 = Plates.insert({
     restaurantId: rest1,
-    userId: tom._id,
+    userId: jonathan._id,
     name: 'Spaghetti',
     submitted: new Date(now - 5 * 3600 * 1000),
     rating: 5.7,
@@ -71,7 +76,7 @@ if (Restaurants.find().count() === 0) {
 
 var plate2 = Plates.insert({
     restaurantId: rest1,
-    userId: sacha._id,
+    userId: jonathan._id,
     name: 'Lasagna',
     submitted: new Date(now - 3 * 3600 * 1000),
     rating: 6.3,
@@ -82,7 +87,6 @@ var plate2 = Plates.insert({
   Reviews.insert({
     plateId: plate1,
     userId: tom._id,
-    author: 'Jonathan L.',
     submitted: new Date(now - 5 * 3600 * 1000),
     rating: 8.7,
     body: 'Amazing Spaghetti!'
@@ -90,8 +94,7 @@ var plate2 = Plates.insert({
 
   Reviews.insert({
     plateId: plate1,
-    userId: tom._id,
-    author: 'Jonathan L.',
+    userId: jonathan._id,
     submitted: new Date(now - 5 * 3600 * 1000),
     rating: 9.7,
     body: 'Incredible spaghetti. It changed my life!!'
