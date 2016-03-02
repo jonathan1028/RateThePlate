@@ -1,13 +1,61 @@
 // Fixture data
+//Create Test Users
+if (Meteor.users.find().fetch().length === 0) {
+
+    console.log('Creating users: ');
+
+    var users=[
+      {email: "dgra@gmail.com", username: "gra", name: "gra", roles:['admin']}
+    ];
+
+    _.each(users, function(user){
+      Accounts.createUser({
+        email: user.email,
+        password: "admin",
+        profile: {username: user.username},
+        profile: {name: user.name},
+        roles: user.roles
+      });
+    });
+
+    /*var users = [
+        {name:"Normal User",email:"normal@example.com",roles:[]},
+        {name:"View-Secrets User",email:"view@example.com",roles:['view-secrets']},
+        {name:"Manage-Users User",email:"manage@example.com",roles:['manage-users']},
+        {name:"Admin User",email:"admin@example.com",roles:['admin']}
+      ];
+
+    _.each(users, function (userData) {
+      var id,
+          user;*/
+      
+      //console.log(user);
+
+     /* id = Accounts.createUser({
+        email: userData.email,
+        password: "apple1",
+        profile: { name: userData.name }
+      });
+
+      // email verification
+      Meteor.users.update({_id: id}, {$set:{'emails.0.verified': true}});
+
+      Roles.addUsersToRoles(id, userData.roles);
+    
+    });*/
+}
+
+//Create Test Restaurants
 if (Restaurants.find().count() === 0) {
   var now = new Date().getTime();
+
 
   // create admin users
   var jonathanId = Meteor.users.insert({
     profile: { 
       name: 'Jonathan Lee' 
-      //email: 'lee.jonathanw@gmail.com'
-      //password: 'password'
+      //email: 'lee.jonathanw@gmail.com',
+      //password: 'password',
     }, 
     admin: true
   });

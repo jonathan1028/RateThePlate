@@ -10,6 +10,10 @@ Meteor.publish('reviews', function() {
   return Reviews.find();
 });
 
+Meteor.publish(null, function (){
+  return Meteor.roles.find({})
+});
+
 Meteor.publish('posts', function() {
   return Posts.find();
 });
@@ -17,6 +21,7 @@ Meteor.publish('posts', function() {
 Meteor.publish('comments', function() {
   return Comments.find();
 });
+
 
 /*Meteor.publish('comments', function(plateId) {
   check(plateId, String);
