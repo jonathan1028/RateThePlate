@@ -26,26 +26,7 @@ check
 audit-argument-checks
 dandv:jquery-rateit
 underscore
-alanning:roles
-accounts-base
-aldeed:collection2
-browser-policy
-digilord:faker
-fourseven:scss
-kadira:blaze-layout
-kadira:flow-router
-meteorhacks:fast-render
-meteorhacks:npm
-meteorhacks:ssr
-reactive-dict
-reactive-var
-stevezhu:lodash
-templating
 themeteorchef:bert
-themeteorchef:jquery-validation
 
 
-npm-container
-random
-email
 momentjs:moment
